@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>userHome</title>
 </head>
 <body>
-	home.jsp
-	<img src="/img/adorable_kay.jpg" />
+	userHome
 </body>
 </html>

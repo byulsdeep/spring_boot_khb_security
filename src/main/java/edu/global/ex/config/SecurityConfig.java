@@ -15,12 +15,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// 우선 CSRF 설정을 해제한다.
 		// 초기 개발시만 해주는게 좋다.
 		http.csrf().disable();
-		http.authorizeRequests()
-				// .antMatchers("/user/**").hasAnyRole("USER")
-				// .antMatchers("/admin/**").hasAnyRole("ADMIN")
-				// .antMatchers("/**").hasAnyRole("ADMIN");
-				.antMatchers("/**").hasAnyRole("USER");
-				// .antMatchers("/**").permitAll();
+
+		http.authorizeRequests().antMatchers("/user/**").hasAnyRole("USER");
+		http.authorizeRequests().antMatchers("/admin/**").hasAnyRole("ADMIN");
 
 		http.formLogin(); // 스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
 
@@ -30,8 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 		auth.inMemoryAuthentication()
-		.withUser("user").password("{noop}user").roles("USER")
-		.and()
+		.withUser("user").password("{noop}user").roles("USER").and()
 		.withUser("admin").password("{noop}admin").roles("ADMIN");
 	}
 }
