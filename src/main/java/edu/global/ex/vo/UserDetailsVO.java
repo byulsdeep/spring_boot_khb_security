@@ -42,6 +42,10 @@ public class UserDetailsVO implements UserDetails {
 		this.authorities = authorities;
 	}
 
+	public String getCart() {
+		return "cart";
+	}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;

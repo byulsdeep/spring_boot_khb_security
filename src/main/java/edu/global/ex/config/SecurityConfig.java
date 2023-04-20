@@ -31,9 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.formLogin() // 스프링 시큐리티에 있는 기본 로그인 폼을 사용하겠다.
 			.loginPage("/login")
 			.usernameParameter("id")
-			.usernameParameter("pw")
+			.passwordParameter("pw")
 			.permitAll();
-
 	}
 
 	@Override
