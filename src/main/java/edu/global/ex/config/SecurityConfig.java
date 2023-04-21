@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// 우선 CSRF설정을 해제한다.
 		// 초기 개발시만 해주는게 좋다.
-		http.csrf().disable();
+//		http.csrf().disable();
+
 		http.authorizeRequests().antMatchers("/user/**").hasAnyRole("USER") // DB상에서는 ROLE_USER이다 /user/**(URL) : user로
 																			// 입력하여 들어오는 모든 것에 인증을 시키겠다.
 				.antMatchers("/admin/**").hasAnyRole("ADMIN") // id: admin, pw:admin /admin/**(URL) : admin으로 들어오는 모든 것에

@@ -20,11 +20,11 @@
 		</c:if>
 		<p>
 			<label for="username">아이디</label>
-			<input type="text" id="id" name="id" /> <!-- SecurityConfig.java의 .usernameParameter("id")로 인해 username이 아닌 id로 받아올 수 있다. -->
+			<input type="text" id="id" name="id" value="byul" /> <!-- SecurityConfig.java의 .usernameParameter("id")로 인해 username이 아닌 id로 받아올 수 있다. -->
 		</p>
 		<p>
 			<label for="password">비밀번호</label>
-			<input type="password" id="password" name="pw" /><!-- SecurityConfig.java의 .usernameParameter("pw")로 인해 password이 아닌 pw로 받아올 수 있다. -->
+			<input type="password" id="password" name="pw" value="byul" /><!-- SecurityConfig.java의 .usernameParameter("pw")로 인해 password이 아닌 pw로 받아올 수 있다. -->
 		</p>
 		<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 		<button type="submit" class="btn">로그인</button>
